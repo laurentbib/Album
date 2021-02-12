@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Album</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="album_fragment_label">Album</string>
+    <string name="gallery_fragment_label">Gallery</string>
+
+    <!-- Strings used for fragments for transition -->
+    <string name="transition_album_title">transition_title %d</string>
+    <string name="data_updated">Data are updated</string>
+
+</resources>

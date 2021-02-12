@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/colorPrimary"
+    android:id="@+id/galleryContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/albumTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:textColor="@color/linxo_color"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/galleryListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/albumTitle" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/loadingShimmer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/albumTitle"
+        app:shimmer_auto_start="false"
+        tools:visibility="gone">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <include layout="@layout/loading_gallery_item_view"
+                    android:layout_width="140dp"
+                    android:layout_margin="@dimen/min_margin"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"/>
+                <include layout="@layout/loading_gallery_item_view"
+                    android:layout_margin="@dimen/min_margin"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <include layout="@layout/loading_gallery_item_view"
+                    android:layout_width="140dp"
+                    android:layout_margin="@dimen/min_margin"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"/>
+                <include layout="@layout/loading_gallery_item_view"
+                    android:layout_margin="@dimen/min_margin"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <include layout="@layout/loading_gallery_item_view"
+                    android:layout_width="140dp"
+                    android:layout_margin="@dimen/min_margin"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"/>
+                <include layout="@layout/loading_gallery_item_view"
+                    android:layout_margin="@dimen/min_margin"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

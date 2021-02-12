@@ -1,0 +1,39 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/min_margin"
+    app:cardCornerRadius="@dimen/corner_radius"
+    app:cardElevation="@dimen/card_elevation"
+    app:cardBackgroundColor="?attr/colorSurface"
+    >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+  >
+
+    <ImageView
+        android:id="@+id/Image"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/max_margin"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/color_text"
+        app:layout_constraintStart_toStartOf="@+id/Image"
+        app:layout_constraintTop_toBottomOf="@+id/Image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Image"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

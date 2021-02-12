@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/albumFragment">
+
+    <fragment
+        android:id="@+id/albumFragment"
+        android:name="com.biblublab.album.features.album.AlbumFragment"
+        android:label="@string/album_fragment_label"
+        tools:layout="@layout/album_fragment" >
+
+        <action
+            android:id="@+id/openGalleryFragment"
+            app:destination="@id/galleryFragment" />
+        <argument
+            android:name="albumEntity"
+            app:argType="com.biblublab.album.features.album.AlbumEntity"/>
+    </fragment>
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.biblublab.album.features.gallery.GalleryFragment"
+        android:label="@string/gallery_fragment_label"
+        tools:layout="@layout/gallery_fragment">
+
+        <action
+            android:id="@+id/backToAlbum"
+            app:destination="@id/albumFragment" />
+        <argument
+            android:name="albumEntity"
+            app:argType="com.biblublab.album.features.album.AlbumEntity"/>
+    </fragment>
+</navigation>

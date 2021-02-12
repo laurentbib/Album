@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="shimmerBackground">@color/linxo_color</color>
+    <color name="linxo_color">#FB5272</color>
+    <color name="primary_dark_color">#363640</color>
+    <color name="surface_dark_color">#bfb3b3</color>
+    <color name="primary_day_color">@color/white</color>
+    <color name="surface_day_color">@color/linxo_color</color>
+
+    <color name="color_text">#FFFFFFFF</color>
+</resources>

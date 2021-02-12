@@ -1,0 +1,84 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'koin'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.biblublab.album"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.versionCode
+        versionName versions.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
+    //core
+    implementation "androidx.core:core-ktx:${versions.coreKtx}"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-extensions:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-common:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-common-java8:${versions.lifecycle}"
+
+    //ui
+    implementation "androidx.appcompat:appcompat:${versions.appCompat}"
+    implementation "com.google.android.material:material:${versions.material}"
+    implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
+    implementation "com.facebook.shimmer:shimmer:${versions.shimmer}"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:${versions.swipe_refresh}"
+
+
+    //di
+    implementation "org.koin:koin-android:${versions.koin}"
+    implementation "org.koin:koin-androidx-viewmodel:${versions.koin}"
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
+
+    //navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
+    implementation "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+
+    //picture
+    implementation "io.coil-kt:coil:${versions.coil}"
+
+    //test
+    testImplementation "junit:junit:${versions.junit}"
+    androidTestImplementation "androidx.test.ext:junit:${versions.instrum}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
+
+    implementation project(':domain')
+    implementation project(":data")
+}
