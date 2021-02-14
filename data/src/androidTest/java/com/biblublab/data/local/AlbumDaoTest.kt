@@ -20,7 +20,7 @@ import java.io.IOException
 open class AlbumDaoTest {
 
     private lateinit var appDatabase: AlbumDataBase
-    private lateinit var albumDao : AlbumDao
+    private lateinit var albumDao: AlbumDao
 
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
@@ -28,10 +28,10 @@ open class AlbumDaoTest {
     @Before
     fun initDb() {
         appDatabase = Room.inMemoryDatabaseBuilder(
-            ApplicationProvider.getApplicationContext(),
-            AlbumDataBase::class.java)
-            .allowMainThreadQueries()
-            .build()
+                ApplicationProvider.getApplicationContext(),
+                AlbumDataBase::class.java)
+                .allowMainThreadQueries()
+                .build()
         albumDao = appDatabase.albumDao()
     }
 
@@ -43,14 +43,16 @@ open class AlbumDaoTest {
 
     @Test
     fun insertAlbumTest() = runBlocking {
+        //given
         val alBumDatabaseObject = AlbumDatabaseObject(ALBUM_ID, AUTHOR_ID, ALBUM_TITLE)
         val secondAlBumDatabaseObject = AlbumDatabaseObject(ALBUM_ID + ALBUM_ID, AUTHOR_ID, ALBUM_TITLE)
         val authorDatabaseObject = AuthorDatabaseObject(AUTHOR_ID, AUTHOR_NAME, AUTHOR_SURNAME)
         val album = Album(ALBUM_ID, ALBUM_TITLE, AUTHOR_ID, AUTHOR_NAME, AUTHOR_SURNAME)
         val secondAlbum = Album(ALBUM_ID + ALBUM_ID, ALBUM_TITLE, AUTHOR_ID, AUTHOR_NAME, AUTHOR_SURNAME)
+        //when
         albumDao.insertAuthors(listOf(authorDatabaseObject))
         albumDao.insertAlbums(listOf(alBumDatabaseObject, secondAlBumDatabaseObject))
-
+        //then
         org.junit.Assert.assertEquals(appDatabase.albumDao().getAllAlbumWithAuthors().take(2).toList(), listOf(album, secondAlbum))
 
     }

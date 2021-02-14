@@ -4,8 +4,6 @@ import android.view.View
 import android.widget.ImageView
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import coil.load
-import coil.transform.CircleCropTransformation
-import com.biblublab.album.R
 import com.facebook.shimmer.ShimmerFrameLayout
 
 fun ShimmerFrameLayout.beginShimmerAnim() {

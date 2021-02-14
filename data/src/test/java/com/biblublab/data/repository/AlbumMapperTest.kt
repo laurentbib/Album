@@ -19,10 +19,11 @@ class AlbumMapperTest {
 
     @Test
     fun responseAlbumObjectIsTheSameAsDataBaseAlbumObject() {
+        //given
         val response = AlbumResponse(AUTHOR_ID, ALBUM_ID, ALBUM_TITLE)
-
+        //when
         val result = albumMapper.toAlbumDatabaseObject(response)
-
+        //then
         assertEquals(result.albumId, response.albumId)
     }
 }

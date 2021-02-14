@@ -9,9 +9,7 @@ import com.biblublab.album.common.extension.loadImg
 import com.biblublab.album.databinding.GalleryItemViewBinding
 
 class GalleryAdapter() : ListAdapter<PhotoEntity, GalleryAdapter.PhotoViewHolder>(
-    PhotoItemDiffCallback()
-) {
-
+    PhotoItemDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoViewHolder {
         val binding = GalleryItemViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -34,7 +32,5 @@ class GalleryAdapter() : ListAdapter<PhotoEntity, GalleryAdapter.PhotoViewHolder
 internal  class PhotoItemDiffCallback : DiffUtil.ItemCallback<PhotoEntity>(){
     override fun areItemsTheSame(oldItem: PhotoEntity, newItem: PhotoEntity): Boolean = oldItem == newItem
 
-    override fun areContentsTheSame(oldItem: PhotoEntity, newItem: PhotoEntity): Boolean {
-        return false
-    }
+    override fun areContentsTheSame(oldItem: PhotoEntity, newItem: PhotoEntity): Boolean = oldItem == newItem
 }

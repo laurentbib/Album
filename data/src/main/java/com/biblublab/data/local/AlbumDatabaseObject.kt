@@ -32,9 +32,4 @@ data class PhotoDatabaseObject(
     val photoTitle: String
 )
 
-data class AlbumsWithPhotos(
-    @Embedded val album : AlbumDatabaseObject,
-    @Relation(parentColumn = "albumId", entityColumn = "photoAlbumId")
-    val photos : List<PhotoDatabaseObject>
-)
 

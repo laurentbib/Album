@@ -11,9 +11,6 @@ interface AlbumApi {
     suspend fun getAlbums() : Response<List<AlbumResponse>>
 
     @GET("photos")
-    suspend fun getPhotos() : Response<List<PhotoResponse>>
-
-    @GET("photos")
     suspend fun getPhotosByAlbum(@Query(PARAM_ALBUM_ID) albumId: Int) : Response<List<PhotoResponse>>
 
     @GET("users")

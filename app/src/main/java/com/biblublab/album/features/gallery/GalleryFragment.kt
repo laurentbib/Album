@@ -66,8 +66,7 @@ class GalleryFragment :
         galleryAdapter.submitList(viewState.gallery)
     }
 
-    override fun renderViewEffect(viewEffect: GalleryScreenEffect) {
-    }
+    override fun renderViewEffect(viewEffect: GalleryScreenEffect) {}
 
 
 }

@@ -42,5 +42,4 @@ class AlbumMapper {
         photoUrl = url)
     }
 
-
 }

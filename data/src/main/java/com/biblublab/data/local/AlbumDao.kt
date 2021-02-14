@@ -2,7 +2,6 @@ package com.biblublab.data.local
 
 import androidx.room.*
 import com.biblublab.domain.model.Album
-import com.biblublab.domain.model.AlbumPhoto
 import kotlinx.coroutines.flow.Flow
 
 @Dao

@@ -8,10 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.biblublab.album.R
 import com.biblublab.album.databinding.AlbumItemViewBinding
 
-class AlbumAdapter(private val onClickItem : (AlbumItemViewBinding, AlbumEntity) -> Unit) : ListAdapter<AlbumEntity, AlbumAdapter.AlbumViewHolder>(
-    AlbumItemDiffCallback()
-) {
-
+class AlbumAdapter(private val onClickItem : (AlbumItemViewBinding, AlbumEntity) -> Unit) : ListAdapter<AlbumEntity, AlbumAdapter.AlbumViewHolder>(AlbumItemDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumViewHolder {
         val binding = AlbumItemViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -21,7 +18,6 @@ class AlbumAdapter(private val onClickItem : (AlbumItemViewBinding, AlbumEntity)
     override fun onBindViewHolder(holder: AlbumViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
-
 
     inner class AlbumViewHolder(private val binding : AlbumItemViewBinding) : RecyclerView.ViewHolder(binding.root){
 
@@ -37,8 +33,5 @@ class AlbumAdapter(private val onClickItem : (AlbumItemViewBinding, AlbumEntity)
 internal  class AlbumItemDiffCallback : DiffUtil.ItemCallback<AlbumEntity>(){
     override fun areItemsTheSame(oldItem: AlbumEntity, newItem: AlbumEntity): Boolean = oldItem == newItem
 
-    override fun areContentsTheSame(oldItem: AlbumEntity, newItem: AlbumEntity): Boolean {
-        return false
-    }
-
+    override fun areContentsTheSame(oldItem: AlbumEntity, newItem: AlbumEntity): Boolean = oldItem == newItem
 }

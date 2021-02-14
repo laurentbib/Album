@@ -6,13 +6,6 @@ data class Album(
     val authorId: Int,
     val name : String,
     val username : String
-
-)
-
-data class Author(
-    val authorId: Int,
-    val name: String,
-    val username: String,
 )
 
 data class AlbumPhoto(

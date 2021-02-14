@@ -29,6 +29,7 @@ J'ai fait le choix aussi d'utiliser une single activity et le navigation compone
 * Mercredi-> 4h => Mise en place features album
 * Jeudi-> 3h => Mise en place features gallery
 * Vendredi> 3h => ajustement graphique, documentation
+* Dimanche> 20 min => relecture, suppression code mort
 * TOTAL => environ 15h
 
 ## librairies utilisées
